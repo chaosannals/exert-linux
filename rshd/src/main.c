@@ -1,12 +1,22 @@
-#include<stdio.h>
-#include<sys/types.h>
-#include<sys/socket.h>
-#include<netinet/in.h>
+#include <stdio.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <unistd.h>
 
-int setup() {
+int subrun()
+{
+    int pid = getpid();
+    execlp("ps", "ps", NULL);
+    return 0;
+}
+
+int setup()
+{
     // 初始化 socket
     int servfd = socket(AF_INET, SOCK_STREAM, 0);
-    if (servfd == -1) {
+    if (servfd == -1)
+    {
         return 1;
     }
 
@@ -16,26 +26,38 @@ int setup() {
     servaddr.sin_family = AF_INET;
     servaddr.sin_addr.s_addr = htonl(INADDR_ANY);
     servaddr.sin_port = htons(30000);
-    if (bind(servfd, (struct sockaddr*)&servaddr, sizeof(servaddr)) == -1) {
+    if (bind(servfd, (struct sockaddr *)&servaddr, sizeof(servaddr)) == -1)
+    {
         return 2;
     }
 
     // 监听
-    if (listen(servfd, 10) == -1) {
+    if (listen(servfd, 10) == -1)
+    {
         return 3;
     }
 
     // 接受请求。
-    for (;;) {
+    for (;;)
+    {
         int connfd = accept(servfd, 0, 0);
-        if (connfd == -1) {
+        if (connfd == -1)
+        {
             continue;
         }
-
+        pid_t pid = fork();
+        if (pid == 0)
+        {
+            return subrun();
+        }
     }
     close(servfd);
+    return 0;
 }
 
-int main() {
+int main()
+{
     printf("reverse shell\n");
+
+    return setup();
 }
