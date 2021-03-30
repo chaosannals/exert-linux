@@ -9,6 +9,7 @@ int submain()
 {
     sleep(6);
     printf("submain (%d) do same thing.\n", getpid());
+    execlp("ps", "ps", "au", NULL); // 会把整个环境切换到指定的进程。导致之后的代码无效。
     return 0;
 }
 
