@@ -7,7 +7,7 @@
 // ICMP 头
 typedef struct icmpheader_s
 {
-    uint8_t type; // 8：回应请求；0：应答
+    uint8_t type; // 8：请求；0：应答；13：时间戳请求；14：时间戳应答；17：地址掩码请求；18：地址掩码应答；10：路由请求；9：路由宣告
     uint8_t code; // 0
     uint16_t checksum; // 校验和
     union

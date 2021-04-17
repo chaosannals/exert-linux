@@ -1,5 +1,5 @@
-#ifndef EXERT_LINUX_IPING
-#define EXERT_LINUX_IPING
+#ifndef EXERT_LINUX_IPING_H
+#define EXERT_LINUX_IPING_H
 
 #include <unistd.h>
 #include <sys/socket.h>
