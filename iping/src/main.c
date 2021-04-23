@@ -1,6 +1,5 @@
 #include <stdio.h>
-
-
+#include "iping.h"
 
 int main()
 {
@@ -10,6 +9,7 @@ int main()
     {
         sprintf(ips[i], "192.168.0.%d", i);
         printf("ip: %s\n", ips[i]);
+        iping(ips[i]);
     }
     return 0;
 }
