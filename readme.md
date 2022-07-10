@@ -11,4 +11,7 @@ lsof <path_to_file_or_dir>
 
 # 清空命令记录
 history -c
+
+# 查看进程树
+pstree
 ```
