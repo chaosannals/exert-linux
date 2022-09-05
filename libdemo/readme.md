@@ -1,0 +1,5 @@
+# lib demo
+
+```bash
+gcc -
+```

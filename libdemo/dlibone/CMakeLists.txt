@@ -1,0 +1,2 @@
+file(GLOB DLIBDEMO_SOURCES "*.cpp")
+
