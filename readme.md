@@ -11,4 +11,15 @@ lsof <path_to_file_or_dir>
 
 # 清空命令记录
 history -c
+
+# 查看进程树
+pstree
+```
+
+```bash
+# 列举磁盘
+fdisk -l
+
+# 加 i 查看索引信息
+ls -li 
 ```
