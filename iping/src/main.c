@@ -9,7 +9,8 @@ int main()
     {
         sprintf(ips[i], "192.168.0.%d", i);
         printf("ip: %s\n", ips[i]);
-        iping(ips[i]);
+        int r = iping(ips[i]);
+        printf("r: %d\n", r);
     }
     return 0;
 }
