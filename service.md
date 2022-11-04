@@ -26,7 +26,17 @@ Wants=sshd-keygen.service
 # idle
 Type=simple
 
-# 
+# 指定 用户
+User=www
+
+# 工作目录
+WorkingDirectory=/your/workdir
+
+# 直接配置环境变量
+Environment=MY_ENV_AAAA=value1
+Environment=MY_ENV_BBBB=value2
+
+# key=value 对文件，初始化环境变量
 EnvironmentFile=/etc/sysconfig/sshd
 # 开始命令
 ExecStart=/usr/sbin/sshd -D $OPTIONS
