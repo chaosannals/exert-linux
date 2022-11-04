@@ -42,6 +42,7 @@ EnvironmentFile=/etc/sysconfig/sshd
 ExecStart=/usr/sbin/sshd -D $OPTIONS
 # 重载命令
 ExecReload=/bin/kill -HUP $MAINPID
+# ExecReload=/bin/kill -s HUP $MAINPID
 
 # 关闭模式
 # process 只关闭主进程
