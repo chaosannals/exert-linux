@@ -18,7 +18,8 @@ systemctl enable myservice
 # --type=service 类型为 service 的Unit
 systemctl list-units
 
-
+# 重新加载服务，修改后执行
+systemctl daemon-reload
 
 # 查看当前登录会话
 loginctl list-sessions

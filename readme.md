@@ -3,6 +3,9 @@
 ## 命令
 
 ```bash
+# 查看谁登录了系统
+who
+
 # 查看进程打开文件
 ls -l /proc/<process_id>/fd
 
