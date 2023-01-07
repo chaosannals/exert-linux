@@ -7,6 +7,30 @@
 - 默认路径（红帽建议不要改这个目录下的）： /usr/lib/systemd/system/
 - 路径（后添加的放到这个目录，通过特殊的处理，可以影响到默认路径的配置）：/etc/systemd/system/
 
+```bash
+# 开机自启动
+systemctl enable myservice
+
+# 列举 Unit
+# --all 所有
+# --all --state=inactive  没有运行
+# --failed 加载失败
+# --type=service 类型为 service 的Unit
+systemctl list-units
+
+# 重新加载服务，修改后执行
+systemctl daemon-reload
+
+# 查看当前登录会话
+loginctl list-sessions
+
+# 查看当前登录用户
+loginctl list-users
+
+# 显示指定用户信息
+loginctl show-user myuser
+```
+
 ### 配置简介
 
 ```conf
