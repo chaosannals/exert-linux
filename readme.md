@@ -23,3 +23,16 @@ fdisk -l
 # 加 i 查看索引信息
 ls -li 
 ```
+
+## 内核参数修改
+
+```bash
+# 查看内核参数，目录表示里面有子项，文件是配置内容
+ls /proc/sys
+
+# 打印 tcp 重用配置
+cat /proc/sys/net/ipv4/tcp_tw_reuse
+
+# 起效 /etc/sysctl.conf
+/sbin/sysctl -p
+```
