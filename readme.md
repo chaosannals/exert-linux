@@ -30,7 +30,11 @@ ls -li
 ## 内核参数修改
 
 ```bash
+# 查看内核参数（方便手工查看）
+/sbin/sysctl -a
+
 # 查看内核参数，目录表示里面有子项，文件是配置内容
+# （方便命令行直接获取值）
 ls /proc/sys
 
 # 打印 tcp 重用配置
@@ -38,4 +42,8 @@ cat /proc/sys/net/ipv4/tcp_tw_reuse
 
 # 起效 /etc/sysctl.conf
 /sbin/sysctl -p
+
+# 修改 /etc/sysctl.conf 起效后是永久的
+# 通过以下命令修改是临时的
+/sbin/sysctl -w net.ipv4.tcp_tw_reuse=1
 ```
