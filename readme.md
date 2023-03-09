@@ -37,8 +37,13 @@ ls -li
 # （方便命令行直接获取值）
 ls /proc/sys
 
+# 以下2个 tcp_tw_* 配置最好是关闭的，不然用户如果内网用户数太多，很容易端口号爆了。导致无法申请端口号而发不出请求。
+
 # 打印 tcp 重用配置
 cat /proc/sys/net/ipv4/tcp_tw_reuse
+
+# 查看 快速回收，一般这个最好查出来是关闭的。
+cat /proc/sys/net/ipv4/tcp_tw_recycle
 
 # 起效 /etc/sysctl.conf
 /sbin/sysctl -p
