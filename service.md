@@ -29,6 +29,12 @@ loginctl list-users
 
 # 显示指定用户信息
 loginctl show-user myuser
+
+# 查看日志
+journalctl -u servicename
+
+# 指定日期后
+journalctl --since="2023-03-16" -u servicename
 ```
 
 ### 配置简介

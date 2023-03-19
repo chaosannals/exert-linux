@@ -38,3 +38,10 @@ chmod ug=rwx,o-x /path/to/file
 #清空 go 权限
 chmod go= /path/to/file
 ```
+
+## 符号链接
+
+```bash
+# 强制创建软链接
+ln -sf /path/to/file /path/to/mylink
+```
